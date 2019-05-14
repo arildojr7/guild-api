@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("events")
-class EventsController {
+class EventController {
 
     @Autowired
     lateinit var eventRepository: EventRepository
