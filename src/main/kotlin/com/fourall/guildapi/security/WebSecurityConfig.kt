@@ -20,7 +20,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
                 .and()
                 .addFilterBefore(JWTLoginFilter("/login", authenticationManager()),
                         UsernamePasswordAuthenticationFilter::class.java)
-                .addFilterBefore(JWTAuthenticationFilter(),
+                .addFilterBefore(JWTAuthorizationFilter(),
                         UsernamePasswordAuthenticationFilter::class.java)
     }
 

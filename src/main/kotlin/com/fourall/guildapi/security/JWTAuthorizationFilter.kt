@@ -9,7 +9,7 @@ import javax.servlet.ServletRequest
 import org.springframework.web.filter.GenericFilterBean
 import javax.servlet.http.HttpServletRequest
 
-class JWTAuthenticationFilter : GenericFilterBean() {
+class JWTAuthorizationFilter : GenericFilterBean() {
 
     @Throws(IOException::class, ServletException::class)
     override fun doFilter(request: ServletRequest, response: ServletResponse, filterChain: FilterChain) {
@@ -20,4 +20,5 @@ class JWTAuthenticationFilter : GenericFilterBean() {
         SecurityContextHolder.getContext().authentication = authentication
         filterChain.doFilter(request, response)
     }
+
 }
