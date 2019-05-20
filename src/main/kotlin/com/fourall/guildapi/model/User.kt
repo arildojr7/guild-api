@@ -1,14 +1,13 @@
 package com.fourall.guildapi.model
 
-import com.fasterxml.jackson.annotation.JsonIgnore
-import javax.persistence.*
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 
-@Entity
-@Table
+@Document(collection = "users")
+
 data class User(
+
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @JsonIgnore
         val id: Long = 0,
         val name: String = "",
         val cpf: String = "",

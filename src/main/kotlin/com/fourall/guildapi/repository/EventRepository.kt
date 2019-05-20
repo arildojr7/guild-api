@@ -1,8 +1,10 @@
 package com.fourall.guildapi.repository
 
 import com.fourall.guildapi.model.Event
-import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.stereotype.Repository
 
-interface EventRepository : JpaRepository<Event, Long> {
+@Repository
+interface EventRepository : MongoRepository<Event, String> {
     fun findByName(name: String) : Event
 }

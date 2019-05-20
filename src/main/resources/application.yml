@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://arildojr:bdKHa43bJLEP540l@cluster0-jvolm.mongodb.net/test?retryWrites=true

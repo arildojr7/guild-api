@@ -37,6 +37,8 @@ class JWTLoginFilter(url: String, authManager: AuthenticationManager) : Abstract
 
     @Throws(IOException::class, ServletException::class)
     override fun successfulAuthentication(request: HttpServletRequest?, response: HttpServletResponse?, chain: FilterChain?, authResult: Authentication?) {
-        TokenAuthenticationService.addAuthentication(response!!, authResult?.name!!)
+        if (response != null && authResult != null) {
+            TokenAuthenticationService.addAuthentication(response, authResult.name)
+        }
     }
 }
